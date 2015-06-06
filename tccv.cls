@@ -34,9 +34,10 @@
 % graphics
 \RequirePackage{graphicx}
 \graphicspath{ {img/} }
-%\usepackage{fontspec}
-%\newfontfamily{\FA}{fontawesome}
-%\usepackage{fontawesome}
+\usepackage{fontspec}
+\usepackage{fontawesome}
+\newfontfamily{\FA}{FontAwesome}
+
 % Capitalize words of at least a minimum length (default to 3 chars).
 % The text is capitalized before being expanded.
 %
@@ -129,7 +130,6 @@
     \Lightning & \href{http://#7}{#7} \\
     \Lightning & \href{http://#8}{#8} \\
     \Lightning & \href{http://#9}{#9} \\
-
     \end{tabularx}}}
 
 % Renders a redes data box:
@@ -196,6 +196,31 @@
     & {\it ##4}\medskip\\}
     \tabularx{\linewidth}{rX}}
     {\endtabularx}
+
+% Use only \item inside this environment: no other macros
+% are allowed:
+%
+% |[
+% \item[optional: what has been achieved]{years}{subject}{notes}
+% ]|
+\newenvironment{referencias}{%
+    \renewcommand\item[4][]{%
+    {\sc ##2} & {\bfseries ##3} \\
+    \ifstrempty{##1}{}{& {\sc ##1} \\}
+    & {\it ##4}\medskip\\}
+    \tabularx{\linewidth}{rX}}
+    {\endtabularx}
+% Use only \item inside this environment: no other macros
+% are allowed:
+%
+% |[
+% \item[optional: what has been achieved]{years}{subject}{notes}
+% ]|
+\newenvironment{habilidades}{%
+    \renewcommand\item[1][]{%
+    {\it{ ##1} \sc } 
+}}
+
 % Use only \item inside this environment: no other macros
 % are allowed:
 %
@@ -221,6 +246,21 @@
     \renewcommand\item[4][]{%
     {\sc ##2} & {\bfseries ##3} \\
     \ifstrempty{##1}{}{& {\sc ##1} \\}
+    & {\it ##4}\medskip\\}
+    \tabularx{\linewidth}{rX}}
+    {\endtabularx}
+
+% Use only \item inside this environment: no other macros
+% are allowed:
+%
+% |[
+% \item[optional: what has been achieved]{years}{subject}{notes}
+% ]|
+\newenvironment{cyp}{%
+    \renewcommand\item[4][]{%
+    {\sc ##1} \\
+    {\sc ##2} & {\bfseries ##3} \\
+    \ifstrempty{##1}{}
     & {\it ##4}\medskip\\}
     \tabularx{\linewidth}{rX}}
     {\endtabularx}
