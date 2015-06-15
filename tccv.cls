@@ -123,9 +123,9 @@
     \begin{tabularx}{\boxwidth}{c|X}
     \Writinghand & {#2}\smallskip\\
     \Telefon     & {#3}\smallskip\\
-    \Letter      & \href{mailto:#4}{#4}
+    \Telefon     & {#4}\smallskip\\
+    \Letter      & \href{mailto:#5}{#5}
     \ifstrempty{#1}{}{\smallskip\\ \Lightning & \href{http://#1}{#1}} \\
-    \Lightning & \href{http://#5}{#5} \\
     \Lightning & \href{http://#6}{#6} \\
     \Lightning & \href{http://#7}{#7} \\
     \Lightning & \href{http://#8}{#8} \\
